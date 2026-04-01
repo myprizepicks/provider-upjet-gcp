@@ -12,6 +12,11 @@ on:
   pull_request: {}
   workflow_dispatch: {}
 
+permissions:
+  contents: read       # Needed to checkout the code
+  statuses: write      # Needed for 'gh api ... /statuses' calls
+  pull-requests: read  # Needed for 'gh pr checkout'
+
 jobs:
   detect-noop:
     runs-on: ubuntu-latest
